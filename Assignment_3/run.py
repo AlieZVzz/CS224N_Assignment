@@ -48,6 +48,8 @@ def train(parser, train_data, dev_data, output_path, batch_size=1024, n_epochs=1
 
 
     ### END YOUR CODE
+    optimizer = torch.optim.Adam(parser.model.parameters())
+    loss_func = nn.CrossEntropyLoss()
 
     for epoch in range(n_epochs):
         print("Epoch {:} out of {:}".format(epoch + 1, n_epochs))
@@ -101,6 +103,11 @@ def train_for_epoch(parser, train_data, dev_data, optimizer, loss_func, batch_si
 
 
             ### END YOUR CODE
+            logits = parser.model.forward(train_x)
+            loss = loss_func(logits, train_y)
+            loss.backward()
+            optimizer.step()
+
             prog.update(1)
             loss_meter.update(loss.item())
 
@@ -115,10 +122,10 @@ def train_for_epoch(parser, train_data, dev_data, optimizer, loss_func, batch_si
 
 if __name__ == "__main__":
     # Note: Set debug to False, when training on entire corpus
-    debug = True
-    # debug = False
+    # debug = True
+    debug = False
 
-    assert(torch.__version__ == "1.0.0"),  "Please install torch version 1.0.0"
+    # assert(torch.__version__ == "1.0.0"),  "Please install torch version 1.0.0"
 
     print(80 * "=")
     print("INITIALIZING")
