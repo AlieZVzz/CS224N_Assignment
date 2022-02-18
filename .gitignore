@@ -1,6 +1,7 @@
 /Assignment_2/utils/datasets
 /CS224N-Stanford-Winter-2019
-
+/Assignment_4/en_es_data
+/Assignment_4/sanity_check_en_es_data
 /Assignment_3/data
 # Byte-compiled / optimized / DLL files
 __pycache__/
