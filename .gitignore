@@ -3,6 +3,10 @@
 /Assignment_4/en_es_data
 /Assignment_4/sanity_check_en_es_data
 /Assignment_3/data
+/Assignment_5/en_es_data
+/Assignment_5/sanity_check_en_es_data
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
